@@ -1,4 +1,4 @@
- package com.mycompany.biblioteca;
+package com.mycompany.biblioteca;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -26,5 +26,17 @@ public class Main {
         clientes.add(nuevo);
 
         System.out.println("Cliente creado exitosamente.");
+    }    
+    public static void listarClientes() {
+    System.out.println("=== Lista de Clientes ===");
+    
+    if (clientes.isEmpty()) {
+        System.out.println("No hay clientes registrados.");
+        return;
+    }           
+    
+    for (Cliente c : clientes) {
+        System.out.println(c);
     }
+}
 }
