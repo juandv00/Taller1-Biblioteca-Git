@@ -78,4 +78,19 @@ public class Main {
 
     System.out.println("No se encontró ningún cliente con ese ID.");
 }
+    public static void eliminarCliente() {
+    System.out.println("=== Eliminar Cliente ===");
+    System.out.print("Ingrese el ID del cliente a eliminar: ");
+    String id = sc.nextLine();
+
+    for (Cliente c : clientes) {
+        if (c.getId().equals(id)) {
+            clientes.remove(c);
+            System.out.println("Cliente eliminado exitosamente.");
+            return;
+        }
+    }
+
+    System.out.println("No se encontró ningún cliente con ese ID.");
+}
 }
