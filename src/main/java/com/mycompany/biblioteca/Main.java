@@ -132,4 +132,29 @@ public class Main {
     }
     System.out.println("No se encontró ningún libro con ese código.");
 }
+    public static void actualizarLibro() {
+    System.out.println("=== Actualizar Libro ===");
+    System.out.print("Ingrese el código del libro a actualizar: ");
+    String codigo = sc.nextLine();
+
+    for (Libro l : libros) {
+        if (l.getCodigo().equals(codigo)) {
+            System.out.print("Nuevo título (" + l.getTitulo() + "): ");
+            String titulo = sc.nextLine();
+            System.out.print("Nuevo año de publicación (" + l.getAnioPublic() + "): ");
+            String anioPublic = sc.nextLine();
+            System.out.print("Nuevo autor (" + l.getAutor() + "): ");
+            String autor = sc.nextLine();
+
+            l.setTitulo(titulo);
+            l.setAnioPublic(anioPublic);
+            l.setAutor(autor);
+
+            System.out.println("Libro actualizado exitosamente.");
+            return;
+        }
+    }
+
+    System.out.println("No se encontró ningún libro con ese código.");
+}
 }
