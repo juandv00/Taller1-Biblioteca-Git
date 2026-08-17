@@ -53,4 +53,29 @@ public class Main {
     }
     System.out.println("No se encontró ningún cliente con ese ID.");
 }
+    public static void actualizarCliente() {
+    System.out.println("=== Actualizar Cliente ===");
+    System.out.print("Ingrese el ID del cliente a actualizar: ");
+    String id = sc.nextLine();
+
+    for (Cliente c : clientes) {
+        if (c.getId().equals(id)) {
+            System.out.print("Nuevo nombre (" + c.getNombre() + "): ");
+            String nombre = sc.nextLine();
+            System.out.print("Nuevo teléfono (" + c.getTelefono() + "): ");
+            String telefono = sc.nextLine();
+            System.out.print("Nuevo email (" + c.getEmail() + "): ");
+            String email = sc.nextLine();
+
+            c.setNombre(nombre);
+            c.setTelefono(telefono);
+            c.setEmail(email);
+
+            System.out.println("Cliente actualizado exitosamente.");
+            return;
+        }
+    }
+
+    System.out.println("No se encontró ningún cliente con ese ID.");
+}
 }
