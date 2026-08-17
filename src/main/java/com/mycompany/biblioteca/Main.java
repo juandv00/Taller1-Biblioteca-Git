@@ -122,4 +122,14 @@ public class Main {
         System.out.println(l);
     }
 }
+    public static void buscarLibro(String codigo) {
+    for (Libro l : libros) {
+        if (l.getCodigo().equals(codigo)) {
+            System.out.println("Libro encontrado:");
+            System.out.println(l);
+            return;
+        }
+    }
+    System.out.println("No se encontró ningún libro con ese código.");
+}
 }
